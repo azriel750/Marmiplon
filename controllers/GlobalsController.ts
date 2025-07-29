@@ -14,10 +14,10 @@ export class GlobalsController {
   }
 
   public contact() {
-    this.response.send("Bienvenue sur la page de contact");
+    this.response.send("Bienvenue sur la page catégorie");
   }
 
   public about() {
-    this.response.send("Bienvenue sur la page à propos");
+    this.response.send("Bienvenue sur la page recettes");
   }
 }
