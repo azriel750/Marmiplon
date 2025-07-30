@@ -1,6 +1,6 @@
 import { Router } from "express";
 import globalRouter from "./globals";
-import recipeRouter from "./recipes";
+import recipeRouter from "./recipe";
 
 // Initialiastion du router Express
 const router = Router();

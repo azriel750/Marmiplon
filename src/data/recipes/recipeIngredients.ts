@@ -1,4 +1,6 @@
+
 import { RecipeIngredient } from "../../interfaces/RecipeIngredients";
+
 
 export const recipeIngredients: RecipeIngredient[] = [
 	{ id: 1, quantity: 1, unit: "tranche", ingredientId: 1, recipeId: 101 },
