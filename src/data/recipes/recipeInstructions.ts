@@ -1,3 +1,5 @@
+import { RecipeInstruction } from "../../interfaces/RecipeInstruction";
+
 export const recipeInstructions: RecipeInstruction[] = [
 	{ id: 1, step: 1, description: "Grillez le pain.", recipeId: 101 },
 	{

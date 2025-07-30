@@ -1,4 +1,6 @@
-export const ingredients: Ingredient[] = [
+import { Ingredient } from "../../interfaces/Ingredients";
+
+export const ingredients: Ingredient [] = [
 	{ id: 1, name: "Pain" },
 	{ id: 2, name: "Tomates" },
 	{ id: 3, name: "Basilic" },

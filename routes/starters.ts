@@ -1,4 +1,6 @@
-import { Router } from "express";
+// ON ATTEND STARTERSCONTROLLERS
+
+/*import { Router } from "express";
 import { startersController } from "../controllers/startersController";
 
 // Initialiastion du bookRouter Express
@@ -34,4 +36,4 @@ startersRouter.delete("/recipes/:id", (request, response) => {
   controller.deleteRecipe();
 });
 
-export default startersRouter;
+export default startersRouter; */
