@@ -11,13 +11,13 @@ globalRouter.get("/", (request, response) => {
 });
 
 // Déclaration de la route 'contact'
-globalRouter.get("/Category", (request, response) => {
+globalRouter.get("/contact", (request, response) => {
   const controller = new GlobalsController(request, response);
   controller.contact();
 });
 
 // Déclaration de la route 'à propos'
-globalRouter.get("/Recipes", (request, response) => {
+globalRouter.get("/about", (request, response) => {
   const controller = new GlobalsController(request, response);
   controller.about();
 });

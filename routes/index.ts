@@ -1,6 +1,6 @@
 import { Router } from "express";
 import globalRouter from "./globals";
-import recipeRouter from "./recipes";
+import recipeRouter from "./recipe";
 
 // Initialiastion du router Express
 const router = Router();
@@ -9,6 +9,6 @@ const router = Router();
 router.use(globalRouter);
 
 // On lie le router spécial "book" au router principale
-router.use(recipeRouterRouter);
+router.use(recipeRouter);
 
 export default router;
