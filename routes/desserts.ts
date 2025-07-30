@@ -1,5 +1,9 @@
+
+// ICI ON ATEND LE CONTROLLER DESSERTSCONTROLLER
+/*
 import { Router } from "express";
-import { dessertsController } from "../controllers/dessertsController";
+
+
 
 // Initialiastion du Router Express
 const dessertRouter = Router();
@@ -34,4 +38,6 @@ dessertRouter.delete("/desserts/:id", (request, response) => {
   controller.deleteDesserts();
 });
 
-export default dessertRouter;
+
+export default dessertRouter; */
+

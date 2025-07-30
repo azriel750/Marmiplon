@@ -4,7 +4,7 @@ import { recipeComments } from "../src/data/recipes/recipeComments";
 
 
 
-export class RecipeControllerController {
+export class RecipeController {
   protected request: Request;
   protected response: Response;
 

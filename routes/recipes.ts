@@ -1,19 +1,19 @@
 import { Router } from "express";
-import { RecipesController } from "../controllers/RecipesController";
+import { RecipeController } from "../controllers/RecipesController";
 
 
 // Initialiastion du bookRouter Express
-const bookRouter = Router();
+const recipeRouter = Router();
 
 // Browse
-bookRouter.get("/recipes", (request, response) => {
-  const controller = new RecipesController(request, response);
+recipeRouter.get("/recipes", (request, response) => {
+  const controller = new RecipeController(request, response);
   controller.browseRecipes();
 });
 
 // Read
-bookRouter.get("/recipes/:id", (request, response) => {
-  const controller = new RecipesController(request, response);
+recipeRouter.get("/recipes/:id", (request, response) => {
+  const controller = new RecipeController(request, response);
   controller.readRecipe();
 });
 
@@ -24,8 +24,8 @@ recipeRouter.put("/recipes/:id", (request, response) => {
 });
 
 // Add
-bookRouter.post("/recipes/", (request, response) => {
-  const controller = new RecipesController(request, response);
+recipeRouter.post("/recipes/", (request, response) => {
+  const controller = new RecipeController(request, response);
   controller.addRecipe();
 });
 
