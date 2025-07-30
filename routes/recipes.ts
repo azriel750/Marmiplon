@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { BookController } from "../controllers/RecipesController";
+import { RecipeController } from "../controllers/RecipesController";
 
 // Initialiastion du bookRouter Express
 const bookRouter = Router();

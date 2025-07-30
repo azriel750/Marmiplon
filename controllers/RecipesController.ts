@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
+import { recipes } from "../src/data/recipes/recipe";
+import { recipeComments } from "../src/data/recipes/recipeComments";
 
-// WTF : rien à faire la, juste utile pour l'explication
 
 
 export class RecipeControllerController {
@@ -28,28 +29,28 @@ export class RecipeControllerController {
       return recipe.id == parseInt(requestedId);
     });
 
-    // Si je n'ai pas trouvé le livre
+    // Si je n'ai pas trouvé la recette
     if (!recipe) {
-      this.response.send(`Le livre demandé n'existe pas`);
+      this.response.send(`La recette demandé n'existe pas`);
     }
 
-    // Puisque j'ai trouvé le livre, j'utilise son ID pour identifier les commentaires correspondants au livre
+    // Puisque j'ai trouvé la recette, j'utilise son ID pour identifier les commentaires correspondants au livre
     const relatedComments = recipeComments.filter((recipeComment) => {
       return recipeComment.recipeId == recipe?.id;
     });
 
-    // Si j'ai trouvé le livre
+    // Si j'ai trouvé la recette
     this.response.send(
       `Bienvenue sur le détail de la recette : ${recipe?.title}. Il y a ${relatedComments.length} commentaire(s)`
     );
   }
 
-  public editrecipe() {
+  public editRecipe() {
     this.response.send("Bienvenue sur l'éditon de la recette");
   }
 
-  public addrecipe() {
-    this.response.send("Bienvenue sur l'ajout d'un livre");
+  public addRecipe() {
+    this.response.send("Bienvenue sur l'ajout d'une recette");
   }
 
   public deleteRecipe() {
