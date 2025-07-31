@@ -1,0 +1,82 @@
+/* Base Style */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: antiquewhite;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Navigation */
+.navigation {
+  background-color: #c53b1c;
+  padding: 10px 20px;
+  color: antiquewhite;
+}
+
+.navElements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.brandNamewhite {
+  font-size: 35px;
+  font-family: 'Playfair Display', serif;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  display: none;
+}
+
+.searchBox {
+  display: flex;
+  gap: 5px;
+}
+
+.btn {
+  background-color: antiquewhite;
+  color: #D9310C;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+input {
+  background-color: white;
+  border-radius: 5px;
+  height: 28px;
+  border: none;
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.navLink {
+  font-family: 'Nunito';
+  color: antiquewhite;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navElements {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .navRight {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+}
