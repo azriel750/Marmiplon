@@ -10,7 +10,8 @@ export class GlobalsController {
   }
 
   public homepage() {
-    this.response.send("Bienvenue sur la page d'accueil");
+    this.response.render("pages/home");
+    
   }
 
   public contact() {
