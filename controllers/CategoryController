@@ -10,7 +10,7 @@ export class CategoryController {
   }
 
   public homepage() {
-    this.response.send("Bienvenue sur la page Category");
+    this.response.send("Bienvenue sur la MARMIPAGE");
   }
 
   

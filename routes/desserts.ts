@@ -1,43 +1,36 @@
-
-// ICI ON ATEND LE CONTROLLER DESSERTSCONTROLLER
-/*
 import { Router } from "express";
+import { DessertsController } from "../controllers/DessertsController";
 
-
-
-// Initialiastion du Router Express
 const dessertRouter = Router();
 
 // Browse
 dessertRouter.get("/desserts", (request, response) => {
-  const controller = new dessertsController(request, response);
-  controller.browsedesserts();
+  const controller = new DessertsController(request, response);
+  controller.browseDesserts();
 });
 
 // Read
 dessertRouter.get("/desserts/:id", (request, response) => {
-  const controller = new dessertsController(request, response);
-  controller.readDesserts();
+  const controller = new DessertsController(request, response);
+  controller.readDessert();
 });
 
 // Edit
 dessertRouter.put("/desserts/:id", (request, response) => {
-  const controller = new dessertsController(request, response);
-  controller.editDesserts();
+  const controller = new DessertsController(request, response);
+  controller.editDessert();
 });
 
 // Add
-dessertRouter.post("/desserts/", (request, response) => {
-  const controller = new dessertsController(request, response);
-  controller.addDesserts();
+dessertRouter.post("/desserts", (request, response) => {
+  const controller = new DessertsController(request, response);
+  controller.addDessert();
 });
 
 // Delete
 dessertRouter.delete("/desserts/:id", (request, response) => {
-  const controller = new dessertsController(request, response);
-  controller.deleteDesserts();
+  const controller = new DessertsController(request, response);
+  controller.deleteDessert();
 });
 
-
-export default dessertRouter; */
-
+export default dessertRouter;
