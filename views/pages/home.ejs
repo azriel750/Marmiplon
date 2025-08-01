@@ -1,23 +1,51 @@
 
 <%- include("../partials/head", {title: "Welcome Bon Plated"}) %>
 
-<%-
+
     <section class="homepageCentral">
         <div class="allCat">
-            <div class="entree">
+            <h1 id="pageName">Category</h1>
+            <div class="cat">
                 <a href="/starters">
-                    <h1>Entrées</h1>
+
+                    <h2 class="catName">Entrées</h2>
+                    <p>Des entrees delicieuses pour commencer le repas!</p>
+                    <img src="/image_10.png" alt="Entrées">
+                </a>
             </div>
 
-            <div class="plat">
+            <div class="cat">
+                <a href="main_dish">
 
+                    <h2>Plat principal</h2>
+                    <p>Des plats principaux savoureux pour le cœur du repas.</p>
+                    <img src="/image2.png" alt="Plat" class="catImg">
+                </a>
             </div>
 
-            <div class="dessert">
-
+            <div class="cat">
+                <a href="dessert">
+                    <h2>Dessert</h2>
+                    <p>Des desserts sucrés pour terminer le repas sur une note agréable.</p>
+                    <img src="/image3.png" alt="Dessert">
+                    
+                </a>
             </div>
-        </div>
-    </section> %>
+
+            <div class="cardMonth">
+               
+                    <h2>Recipe Card for the Month</h2>
+                    <div>
+                        <p>Ingredients</p>
+                        <p>1 Avocados, 200gm cherry tomatoes, few leaves of coriander, 1 small onion, herbe de provence, salt, lime</p>
+                        <img src="/mask group.png" alt="Dessert">
+                    
+                    </div>
+                    
+                    
+               
+            </div>
+    </section> 
 
 
  <%- include ("../partials/footer") %>
