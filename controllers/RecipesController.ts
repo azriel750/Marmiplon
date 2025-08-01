@@ -21,10 +21,10 @@ export class RecipeController {
   }
 
   public readRecipe() {
-    // Je récupère l'ID du livre réclamé (dans l'URL)
+    // Je récupère l'ID de la recette réclamée (dans l'URL)
     const requestedId = this.request.params.id;
 
-    // J'exploite l'ID réclamé pour récupérer le livre dans "la base de données"
+    // J'exploite l'ID réclamé pour récupérer la recette dans "la base de données"
     const recipe = recipes.find((recipe) => {
       return recipe.id == parseInt(requestedId);
     });

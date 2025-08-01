@@ -1,5 +1,9 @@
 import { Controller } from "../libs/Controller";
-import { categories } from "../src/data/categories/categories";
+import { recipes } from "../src/data/recipes/recipe";
+import { recipeComments } from "../src/data/recipes/recipeComments";
+import { Dessert } from "../src/interfaces/Categories";
+import { RecipeComment } from "../src/interfaces/RecipeComments";
+
 export class DessertsController extends Controller {
   public browseDesserts() {
     const success = this.request.query.success;
@@ -17,32 +21,27 @@ export class DessertsController extends Controller {
       };
     }
 
-    this.response.render("pages/.ejs", {
-      desserts,
+    this.response.render("pages/desserts.ejs", {
+      recipes,
       flash,
     });
   }
 
   public readDessert() {
-    // Je récupère l'ID du dessert réclamé (dans l'URL)
     const requestedId = this.request.params.id;
-
-    // J'exploite l'ID réclamé pour récupérer le dessert dans "la base de données"
-    const dessert = desserts.find((dessert) => {
-      return dessert.id == parseInt(requestedId);
+    const dessert = recipes.find((recipeId) => {
+      return recipeId.id == parseInt(requestedId);
     });
 
-    // Si je n'ai pas trouvé le dessert
     if (!dessert) {
       this.response.send(`La recette demandée n'existe pas`);
+      return;
     }
 
-    // Puisque j'ai trouvé le dessert, j'utilise son ID pour identifier les commentaires correspondants au dessert
-    const comments = dessertComments.filter((dessertComment) => {
-      return dessertComment.dessertId == dessert?.id;
+    const comments = recipeComments.filter((recipeComments) => {
+      return recipeComments.recipeId == dessert.id;
     });
 
-    // Si j'ai trouvé la recette
     this.response.render("pages/dessert.ejs", {
       dessert,
       comments,

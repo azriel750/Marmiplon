@@ -1,25 +1,27 @@
 import { Router } from "express";
 import { GlobalsController } from "../controllers/GlobalsController";
 
-// Initialiastion du bookRouter Express
 const globalRouter = Router();
 
-// Déclaration de la route 'homepage'
 globalRouter.get("/", (request, response) => {
   const controller = new GlobalsController(request, response);
   controller.homepage();
 });
 
-// Déclaration de la route 'contact'
-globalRouter.get("/Category", (request, response) => {
+
+globalRouter.get("/categories", (request, response) => {
+
+
   const controller = new GlobalsController(request, response);
-  controller.contact();
+  controller.categories();
 });
 
-// Déclaration de la route 'à propos'
-globalRouter.get("/Recipes", (request, response) => {
+
+globalRouter.get("/desserts", (request, response) => {
+
+
   const controller = new GlobalsController(request, response);
-  controller.about();
+  controller.desserts();
 });
 
 export default globalRouter;
