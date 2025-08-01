@@ -10,7 +10,7 @@ export class GlobalsController {
   }
 
   public homepage() {
-    this.response.render("pages/home");
+    this.response.render("pages/home.ejs");
     
   }
 
