@@ -24,9 +24,13 @@ app.use(Express.static(path.join(__dirname, "public")));
 
 app.use(Express.urlencoded({ extended: true }));
 
+
 // On lie le router à l'application Express
 app.use("/", router);
 
+app.use((req, res) => {
+  res.status(404).send("Page non trouvée");
+});
 // Démarrer le serveur Express
 app.listen(PORT, () => {
   console.log(`Le serveur a démarré sur le port ${PORT}`);
