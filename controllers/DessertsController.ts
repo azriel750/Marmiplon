@@ -1,8 +1,5 @@
 import { Controller } from "../libs/Controller";
-import { recipes } from "../src/data/recipes/recipe";
-import { recipeComments } from "../src/data/recipes/recipeComments";
-import { Dessert } from "../src/interfaces/Categories";
-import { RecipeComment } from "../src/interfaces/RecipeComments";
+import { recipes, categories, ingredients, recipeComments } from '../src/data/data';
 
 export class DessertsController extends Controller {
   public browseDesserts() {
@@ -29,8 +26,8 @@ export class DessertsController extends Controller {
 
   public readDessert() {
     const requestedId = this.request.params.id;
-    const dessert = recipes.find((recipeId) => {
-      return recipeId.id == parseInt(requestedId);
+    const dessert = recipes.find((recipe) => {
+      return recipe.id == parseInt(requestedId);
     });
 
     if (!dessert) {
@@ -38,8 +35,8 @@ export class DessertsController extends Controller {
       return;
     }
 
-    const comments = recipeComments.filter((recipeComments) => {
-      return recipeComments.recipeId == dessert.id;
+    const comments = recipeComments.filter((recipeComment) => {
+      return recipeComment.recipeId == dessert.id;
     });
 
     this.response.render("pages/dessert.ejs", {
@@ -49,7 +46,7 @@ export class DessertsController extends Controller {
   }
 
   public editDessert() {
-    this.response.send("Bienvenue sur l'éditon d'unz recette");
+    this.response.send("Bienvenue sur l'édition d'une recette");
   }
 
   public createDessert() {

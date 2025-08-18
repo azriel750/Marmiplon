@@ -1,47 +1,53 @@
 import { Controller } from "../libs/Controller";
-import { Request, Response } from "express";
-
+import { recipes, categories, ingredients, starters, startersComments } from '../src/data/data';
 
 export class StartersController extends Controller {
   public browseStarters() {
     const success = this.request.query.success;
     let flash = null;
- 
- 
 
-
-   
-    
-
-   
-  public readDessert() {
-    // Je récupère l'ID du dessert réclamé (dans l'URL)
-    const requestedId = this.request.params.id;
-
-    // J'exploite l'ID réclamé pour récupérer le dessert dans "la base de données"
-    const starters = starters.find((starters) => {
-      return starters.id == parseInt(requestedId);
-    });
-
-    // Si je n'ai pas trouvé le dessert
-    if (!starters) {
-      this.response.send(`La recette demandée n'existe pas`);
+    if (success === "true") {
+      flash = {
+        type: "success",
+        message: "L'entrée a bien été créée!",
+      };
+    } else if (success === "false") {
+      flash = {
+        type: "error",
+        message: "Une erreur est survenue lors de la création de l'entrée.",
+      };
     }
 
-    // Puisque j'ai trouvé le dessert, j'utilise son ID pour identifier les commentaires correspondants au dessert
-    const comments = startersComments.filter((dessertComment) => {
-      return dessertComment.dessertId == starters?.id;
-    });
-
-    // Si j'ai trouvé la recette
     this.response.render("pages/starters.ejs", {
       starters,
+      flash,
+    });
+  }
+
+  public readStarter() {
+    const requestedId = this.request.params.id;
+
+    const starter = starters.find((starter) => {
+      return starter.id == parseInt(requestedId);
+    });
+
+    if (!starter) {
+      this.response.send(`La recette demandée n'existe pas`);
+      return;
+    }
+
+    const comments = startersComments.filter((starterComment) => {
+      return starterComment.starterId == starter.id;
+    });
+
+    this.response.render("pages/starter.ejs", {
+      starter,
       comments,
     });
   }
 
   public editStarters() {
-    this.response.send("Bienvenue sur l'éditon d'une recette");
+    this.response.send("Bienvenue sur l'édition d'une recette");
   }
 
   public createStarters() {
@@ -56,10 +62,7 @@ export class StartersController extends Controller {
     this.response.send("Bienvenue sur la suppression d'une recette");
   }
 
-
- starters() {
+  public starters() {
     this.response.render("pages/home.ejs");
-    
   }
-}
 }

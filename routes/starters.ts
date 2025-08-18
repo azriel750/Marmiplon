@@ -1,45 +1,38 @@
 
-// ON ATTEND STARTERSCONTROLLERS
+import { Router } from "express";
+import { StartersController } from "../controllers/StartersController";
 
-/*import { Router } from "express";
-
-
-import { startersController } from "../controllers/startersController";
-
-// Initialiastion du bookRouter Express
 const startersRouter = Router();
 
 // Browse
 startersRouter.get("/starters", (request, response) => {
-  const controller = new startersController(request, response);
-  controller.browseRecipes();
+  const controller = new StartersController(request, response);
+  controller.browseStarters();
 });
 
 // Read
 startersRouter.get("/starters/:id", (request, response) => {
-  const controller = new startersController(request, response);
-  controller.readRecipe();
+  const controller = new StartersController(request, response);
+  controller.readStarter();
 });
 
 // Edit
-startersRouter.put("/recipes/:id", (request, response) => {
-  const controller = new startersController(request, response);
-  controller.editRecipe();
+startersRouter.put("/starters/:id", (request, response) => {
+  const controller = new StartersController(request, response);
+  controller.editStarters();
 });
 
 // Add
-startersRouter.post("/recipes/", (request, response) => {
-  const controller = new startersController(request, response);
-  controller.addRecipe();
+startersRouter.post("/starters", (request, response) => {
+  const controller = new StartersController(request, response);
+  controller.addStarters();
 });
 
 // Delete
-startersRouter.delete("/recipes/:id", (request, response) => {
-  const controller = new startersController(request, response);
-  controller.deleteRecipe();
+startersRouter.delete("/starters/:id", (request, response) => {
+  const controller = new StartersController(request, response);
+  controller.deleteStarters();
 });
 
-
-export default startersRouter; */
-
+export default startersRouter;
 

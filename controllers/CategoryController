@@ -1,3 +1,4 @@
+
 import { Request, Response } from "express";
 
 export class CategoryController {
@@ -12,6 +13,4 @@ export class CategoryController {
   public homepage() {
     this.response.send("Bienvenue sur la MARMIPAGE");
   }
-
-  
 }
