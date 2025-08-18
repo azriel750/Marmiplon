@@ -1,8 +1,5 @@
 import { Request, Response } from "express";
-import { recipes } from "../src/data/recipes/recipe";
-import { recipeComments } from "../src/data/recipes/recipeComments";
-
-
+import { recipes, categories, ingredients, recipeComments } from '../src/data/data';
 
 export class RecipeController {
   protected request: Request;
@@ -15,8 +12,6 @@ export class RecipeController {
 
   public browseRecipes() {
     // Faire des traitements (base de données, calculs, etc)
-
-    // Faire la réponse
     this.response.send(JSON.stringify(recipes));
   }
 
@@ -31,22 +26,23 @@ export class RecipeController {
 
     // Si je n'ai pas trouvé la recette
     if (!recipe) {
-      this.response.send(`La recette demandé n'existe pas`);
+      this.response.send(`La recette demandée n'existe pas`);
+      return;
     }
 
-    // Puisque j'ai trouvé la recette, j'utilise son ID pour identifier les commentaires correspondants au livre
+    // Puisque j'ai trouvé la recette, j'utilise son ID pour identifier les commentaires correspondants à la recette
     const relatedComments = recipeComments.filter((recipeComment) => {
-      return recipeComment.recipeId == recipe?.id;
+      return recipeComment.recipeId == recipe.id;
     });
 
-    // Si j'ai trouvé la recette
+    // Réponse avec infos sur la recette et le nombre de commentaires
     this.response.send(
-      `Bienvenue sur le détail de la recette : ${recipe?.title}. Il y a ${relatedComments.length} commentaire(s)`
+      `Bienvenue sur le détail de la recette : ${recipe.title}. Il y a ${relatedComments.length} commentaire(s)`
     );
   }
 
   public editRecipe() {
-    this.response.send("Bienvenue sur l'éditon de la recette");
+    this.response.send("Bienvenue sur l'édition de la recette");
   }
 
   public addRecipe() {

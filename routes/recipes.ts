@@ -1,8 +1,6 @@
 import { Router } from "express";
 import { RecipeController } from "../controllers/RecipesController";
 
-
-// Initialiastion du bookRouter Express
 const recipeRouter = Router();
 
 // Browse
@@ -24,7 +22,7 @@ recipeRouter.put("/recipes/:id", (request, response) => {
 });
 
 // Add
-recipeRouter.post("/recipes/", (request, response) => {
+recipeRouter.post("/recipes", (request, response) => {
   const controller = new RecipeController(request, response);
   controller.addRecipe();
 });
