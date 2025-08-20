@@ -13,9 +13,5 @@ globalRouter.get("/Categories", (request, response) => {
   controller.categories();
 });
 
-globalRouter.get("/Desserts", (request, response) => {
-  const controller = new GlobalsController(request, response);
-  controller.recettes();
-});
 
 export default globalRouter;

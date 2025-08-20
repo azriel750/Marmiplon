@@ -1,10 +1,15 @@
 import { Controller } from "../libs/Controller";
-import { recipes, categories, ingredients, starters, startersComments } from '../src/data/data';
+import { recipes, categories, ingredients, starters, startersComments  } from '../src/data/data';
+
+interface FlashMessage {
+  type: 'success' | 'error';
+  message: string;
+}
 
 export class StartersController extends Controller {
   public browseStarters() {
     const success = this.request.query.success;
-    let flash = null;
+    let flash: FlashMessage | null = null;
 
     if (success === "true") {
       flash = {
