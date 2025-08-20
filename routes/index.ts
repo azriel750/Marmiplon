@@ -1,9 +1,12 @@
 import { Router } from "express";
+import recipeRouter from "./Recipes";
+import StartersRouter from "./Starters"; 
 import globalRouter from "./globals";
 import dessertRouter from "./desserts";
-import recipeRouter from "./recipes";
-import startersRouter from "./starters"; 
-import mainCourseRouter from "./maincourses"; // idem
+
+
+
+>
 
 const router = Router();
 

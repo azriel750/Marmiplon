@@ -35,7 +35,7 @@ export class DessertsController extends Controller {
     });
 
     if (!dessert) {
-      this.response.send(`La recette demandée n'existe pas`);
+      this.response.send("La recette demandée n'existe pas");
       return;
     }
 

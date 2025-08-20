@@ -8,7 +8,7 @@ globalRouter.get("/", (request, response) => {
   controller.homepage();
 });
 
-globalRouter.get("/categories", (request, response) => {
+globalRouter.get("/Categories", (request, response) => {
   const controller = new GlobalsController(request, response);
   controller.categories();
 });

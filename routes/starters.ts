@@ -1,38 +1,52 @@
 
-import { Router } from "express";
-import { StartersController } from "../controllers/StartersController";
 
-const startersRouter = Router();
+
+import { Router } from "express";
+
+
+import { StartersController } from "../controllers/startersController";
+import { Controller } from "../libs/Controller";
+
+ //Initialiastion du bookRouter Express
+const StartersRouter = Router();
+
 
 // Browse
-startersRouter.get("/starters", (request, response) => {
-  const controller = new StartersController(request, response);
+StartersRouter.get("/Starters", (req, res) => {
+  const controller = new StartersController(req, res);
   controller.browseStarters();
 });
 
 // Read
-startersRouter.get("/starters/:id", (request, response) => {
-  const controller = new StartersController(request, response);
-  controller.readStarter();
+StartersRouter.get("/Starters/:id", (req, res) => {
+  const controller = new StartersController(req, res);
+  controller.readStarters();  
 });
 
 // Edit
-startersRouter.put("/starters/:id", (request, response) => {
-  const controller = new StartersController(request, response);
+StartersRouter.put("/Starters/:id", (req, res) => {
+  const controller = new StartersController(req, res);
   controller.editStarters();
 });
 
-// Add
-startersRouter.post("/starters", (request, response) => {
-  const controller = new StartersController(request, response);
+// Create (formulaire)
+StartersRouter.get("/Starters/create", (req, res) => {
+  const controller = new StartersController(req, res);
+  controller.createStarters();  // <-- ajoute la route
+});
+
+// Add (enregistrement du formulaire)
+StartersRouter.post("/Starters", (req, res) => {
+  const controller = new StartersController(req, res);
   controller.addStarters();
 });
 
 // Delete
-startersRouter.delete("/starters/:id", (request, response) => {
-  const controller = new StartersController(request, response);
+StartersRouter.delete("/Starters/:id", (req, res) => {
+  const controller = new StartersController(req, res);
   controller.deleteStarters();
 });
 
-export default startersRouter;
+export default StartersRouter; 
+
 
