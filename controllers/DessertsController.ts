@@ -1,10 +1,14 @@
 import { Controller } from "../libs/Controller";
 import { recipes, categories, ingredients, recipeComments } from '../src/data/data';
 
+interface FlashMessage {
+  type: 'success' | 'error';
+  message: string;
+}
 export class DessertsController extends Controller {
   public browseDesserts() {
     const success = this.request.query.success;
-    let flash = null;
+    let flash: FlashMessage | null= null;
 
     if (success === "true") {
       flash = {
@@ -31,7 +35,7 @@ export class DessertsController extends Controller {
     });
 
     if (!dessert) {
-      this.response.send(`La recette demandée n'existe pas`);
+      this.response.send("La recette demandée n'existe pas");
       return;
     }
 
