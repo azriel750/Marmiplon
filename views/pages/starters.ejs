@@ -1,23 +1,23 @@
-<%- include("../partials/head", {title: "Welcome Bon Plated"}) %>
-<div>
-    <h1 Entrées h1></h1>
+<%- include("../partials/head", {title: "Welcome Bon Plated" }) %>
 
-    <div class="container">
-        <div class=card1>
-            <a href="#Bruschetta"><p>Bruschetta</p></a>
-<img src="./public/Entree-image1.png" alt="">
-       
-</div>
-    </div>
-    <div class="card2">
-        <div>
-       <a href="#SaladeGrecque"><p>Salade Grecque</p></a>
-            <img src="./public/Entree-image2.png" alt="">
-        
+<div class="container">
+    <h1>Entree</h1>
+
+    <div class="cards">
+        <div class="card">
+            <p>Bruschetta</p>
+            <a href="/Bruschetta">
+                <img src="/Entree-image1.png" alt="Bruschetta">
+            </a>
+        </div>
+
+        <div class="card">
+            <p>Salade Grecque</p>
+            <a href="/SaladeGrecque">
+                <img src="/Entree-image2.png" alt="Salade Grecque">
+            </a>
         </div>
     </div>
+</div>
 
-</div>
-</div>
-</div>
-<%- include ("../partials/footer") %>
+    <%- include ("../partials/footer") %>

@@ -19,12 +19,11 @@ export class StartersController extends Controller {
     }
 
     this.response.render("pages/starters.ejs", {
-      starters,
       flash,
     });
   }
 
-  public readStarter() {
+  public readStarters() {
     const requestedId = this.request.params.id;
 
     const starter = starters.find((starter) => {
@@ -40,7 +39,7 @@ export class StartersController extends Controller {
       return starterComment.starterId == starter.id;
     });
 
-    this.response.render("pages/starter.ejs", {
+    this.response.render("pages/starters.ejs", {
       starter,
       comments,
     });

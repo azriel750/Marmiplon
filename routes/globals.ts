@@ -8,14 +8,14 @@ globalRouter.get("/", (request, response) => {
   controller.homepage();
 });
 
-globalRouter.get("/categories", (request, response) => {
+globalRouter.get("/Categories", (request, response) => {
   const controller = new GlobalsController(request, response);
   controller.categories();
 });
 
-globalRouter.get("/desserts", (request, response) => {
+globalRouter.get("/Desserts", (request, response) => {
   const controller = new GlobalsController(request, response);
-  controller.recettes(); // correction : appel à la bonne méthode
+  controller.recettes();
 });
 
 export default globalRouter;
