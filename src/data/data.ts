@@ -6,17 +6,6 @@ export type Ingredient = {
   name: string;
 };
 
-export type startersComments = {
-   id: number;
-   name: string;
-};
-
-
-export type starters = {
-   id: number;
-   name: string;
-};
-
 export type RecipeIngredient = {
   id: number;
   quantity: number;
@@ -53,7 +42,30 @@ export type Category = {
   description: string;
 };
 
+// Ajoutez ces types
+export type Starter = {
+  id: number;
+  name: string;
+};
+
+export type StarterComment = {
+  id: number;
+  name: string;
+  starterId: number; 
+
+}
+
 // ========== DATA ==========
+
+export const starters: Starter[] = [
+  { id: 101, name: "Bruschetta" },
+  { id: 102, name: "Salade Grecque" },
+];
+
+export const startersComments: StarterComment[] = [
+  { id: 1, name: "Alice", starterId: 101 },
+  { id: 2, name: "Bob", starterId: 102 },
+];
 
 export const categories: Category[] = [
   {
