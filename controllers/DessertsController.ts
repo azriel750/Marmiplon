@@ -22,7 +22,7 @@ export class DessertsController extends Controller {
       };
     }
 
-    this.response.render("pages/desserts.ejs", {
+    this.response.render("pages/Desserts.ejs", {
       recipes,
       flash,
     });
@@ -43,7 +43,7 @@ export class DessertsController extends Controller {
       return recipeComment.recipeId == dessert.id;
     });
 
-    this.response.render("pages/dessert.ejs", {
+    this.response.render("pages/Dessert.ejs", {
       dessert,
       comments,
     });
