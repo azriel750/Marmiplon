@@ -1,6 +1,4 @@
-// src/data/data.ts - FICHIER UNIQUE AVEC TOUT
 
-// ========== TYPES ==========
 export type Ingredient = {
   id: number;
   name: string;
@@ -42,7 +40,7 @@ export type Category = {
   description: string;
 };
 
-// Ajoutez ces types
+
 export type Starter = {
   id: number;
   name: string;
@@ -54,19 +52,52 @@ export type StarterComment = {
   starterId: number; 
 
 }
-
-// ========== DATA ==========
-
+export type Maincourse= {
+  id:number;
+  name : string;
+}
+export type MaincourseComment= {
+  id: number;
+  name:string;
+  MaincourseId:number;
+}
+export type Desserts= {
+  id:number;
+  name : string;
+}
+export type DessertsComment= {
+  id: number;
+  name:string;
+  DessertsId:number;
+}
 export const starters: Starter[] = [
   { id: 101, name: "Bruschetta" },
   { id: 102, name: "Salade Grecque" },
 ];
-
 export const startersComments: StarterComment[] = [
   { id: 1, name: "Alice", starterId: 101 },
   { id: 2, name: "Bob", starterId: 102 },
 ];
 
+
+
+
+
+
+
+export const Maincoursecomment: MaincourseComment[] = [
+  { id: 4, name: "David", MaincourseId: 201 },
+  { id: 5, name: "Eve", MaincourseId: 202 },
+  { id: 6, name: "Frank", MaincourseId: 202 },
+];
+export const Dessert:Desserts[]=[
+{id:301,name:"Tiramisu",},
+{id:302,name:"Tarte aux Pommes"},
+];
+export const Dessertscomment: DessertsComment[] = [
+  { id: 7, name: "Grace", DessertsId: 301 },
+  { id: 8, name: "Hank", DessertsId: 302 },
+];
 export const categories: Category[] = [
   {
     id: 1,

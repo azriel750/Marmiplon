@@ -2,20 +2,13 @@
     
 <div class="container">
     <h1> Desserts </h1>
-    <div class="cards">
+   <% Desserts.forEach((Desserts) => { %> 
         <div class="card">
-            <p>Tiramisu</p>
-            <a href="/Tiramisu">
-                <img src="/Desserts-image1.png" alt="">
-            </a>
+             
+            <a href="/Desserts/<%= Desserts.id %>"><%= Desserts.name %></a>
+            <img src="/Entree-image2.png" alt="">
         </div>
-
-        <div class="card">
-           <p>Apple pie</p>
-            <a href="/Tarte aux Pommes">
-                <img src="/Dessert-image2.png" alt="">
-            </a>
-        </div>
+<% }) %>
     </div>
 </div>
 
