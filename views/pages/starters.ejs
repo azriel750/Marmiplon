@@ -2,21 +2,14 @@
 
 <div class="container">
     <h1>Entree</h1>
-
-    <div class="cards">
+<% starters.forEach((starter) => { %> 
         <div class="card">
-            <p>Bruschetta</p>
-            <a href="/Bruschetta">
-                <img src="/Entree-image1.png" alt="Bruschetta">
-            </a>
+             
+            <a href="/starters/<%= starter.id %>"><%= starter.name %></a>
+            <img src="/Entree-image2.png" alt="">
         </div>
-
-        <div class="card">
-            <p>Salad Grecque</p>
-            <a href="/SaladeGrecque">
-                <img src="/Entree-image2.png" alt="Salade Grecque">
-            </a>
-        </div>
+<% }) %>
+        
     </div>
 </div>
 
