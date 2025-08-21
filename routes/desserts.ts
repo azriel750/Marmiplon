@@ -13,25 +13,25 @@ dessertRouter.get("/Desserts", (request, response) => {
 // Read
 dessertRouter.get("/Desserts/:id", (request, response) => {
   const controller = new DessertsController(request, response);
-  controller.readDessert();
+  controller.readDesserts();
 });
 
 // Edit
 dessertRouter.put("/Desserts/:id", (request, response) => {
   const controller = new DessertsController(request, response);
-  controller.editDessert();
+  controller.editDesserts();
 });
 
 // Add
 dessertRouter.post("/Desserts", (request, response) => {
   const controller = new DessertsController(request, response);
-  controller.addDessert();
+  controller.addDesserts();
 });
 
 // Delete
 dessertRouter.delete("/Desserts/:id", (request, response) => {
   const controller = new DessertsController(request, response);
-  controller.deleteDessert();
+  controller.deleteDesserts();
 });
 
 export default dessertRouter;
