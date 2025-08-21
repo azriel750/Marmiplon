@@ -2,6 +2,7 @@
 import { Router } from "express";
 import { MainCourseController } from "../controllers/MainCourseController";
 
+
 const MainCourseRouter = Router();
 
 // Browse
@@ -35,3 +36,9 @@ MainCourseRouter.delete("/MainCourse/:id", (request, response) => {
 });
 
 export default MainCourseRouter;
+
+
+
+
+
+

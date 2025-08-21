@@ -1,14 +1,15 @@
 import { Controller } from "../libs/Controller";
-import { recipes, categories, ingredients, recipeComments } from '../src/data/data';
+import { Dessert, Desserts,Dessertscomment,DessertsComment } from "../src/data/data";
 
 interface FlashMessage {
   type: 'success' | 'error';
   message: string;
 }
+
 export class DessertsController extends Controller {
   public browseDesserts() {
     const success = this.request.query.success;
-    let flash: FlashMessage | null= null;
+    let flash: FlashMessage | null = null;
 
     if (success === "true") {
       flash = {
@@ -23,45 +24,46 @@ export class DessertsController extends Controller {
     }
 
     this.response.render("pages/Desserts.ejs", {
-      recipes,
+      Dessert,
       flash,
     });
   }
 
-  public readDessert() {
+  public readDesserts() {
     const requestedId = this.request.params.id;
-    const dessert = recipes.find((recipe) => {
-      return recipe.id == parseInt(requestedId);
+    const Desserts = Dessert.find((Desserts) => {
+      return Desserts.id == parseInt(requestedId);
     });
 
-    if (!dessert) {
+    if (!Desserts) {
       this.response.send("La recette demandée n'existe pas");
       return;
     }
 
-    const comments = recipeComments.filter((recipeComment) => {
-      return recipeComment.recipeId == dessert.id;
+    const comments = Dessertscomment.filter((Dessertscomment) => {
+      return Dessertscomment.DessertsId == Desserts.id;
+
     });
 
     this.response.render("pages/Dessert.ejs", {
-      dessert,
+      Desserts,
       comments,
     });
   }
 
-  public editDessert() {
+  public editDesserts() {
     this.response.send("Bienvenue sur l'édition d'une recette");
   }
 
-  public createDessert() {
+  public createDesserts() {
     this.response.render("pages/dessertCreate.ejs");
   }
 
-  public addDessert() {
+  public addDesserts() {
     this.response.send("Bienvenue sur l'ajout d'une recette");
   }
 
-  public deleteDessert() {
+  public deleteDesserts() {
     this.response.send("Bienvenue sur la suppression d'une recette");
   }
 }
