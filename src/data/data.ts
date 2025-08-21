@@ -52,9 +52,13 @@ export type StarterComment = {
   id: number;
   name: string;
   starterId: number; 
-
 }
 
+
+export type MainCourse = {
+  id: number;
+  name: string;
+}
 // ========== DATA ==========
 
 export const starters: Starter[] = [
@@ -66,6 +70,14 @@ export const startersComments: StarterComment[] = [
   { id: 1, name: "Alice", starterId: 101 },
   { id: 2, name: "Bob", starterId: 102 },
 ];
+
+
+export const mainCourse: MainCourse[] = [
+  { id: 1, name: "Patte carbo"},
+  { id: 2, name: "Poulet roti"},
+];
+
+
 
 export const categories: Category[] = [
   {

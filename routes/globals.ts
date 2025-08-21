@@ -8,10 +8,10 @@ globalRouter.get("/", (request, response) => {
   controller.homepage();
 });
 
-globalRouter.get("/Categories", (request, response) => {
-  const controller = new GlobalsController(request, response);
-  controller.categories();
-});
+// globalRouter.get("/Categories", (request, response) => {
+//   const controller = new GlobalsController(request, response);
+//   controller.categories();
+// });
 
 
 export default globalRouter;

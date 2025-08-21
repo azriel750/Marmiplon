@@ -9,6 +9,7 @@ export class CategoryController {
     this.request = request;
     this.response = response;
   }
+// controlleur remplacé par GlobalController.ts
 
   public homepage() {
     this.response.send("Bienvenue sur la MARMIPAGE");

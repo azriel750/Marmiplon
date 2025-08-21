@@ -31,7 +31,6 @@ export class StartersController extends Controller {
 
   public readStarters() {
     const requestedId = this.request.params.id;
-
     const starter = starters.find((starter) => {
       return starter.id == parseInt(requestedId);
     });
@@ -45,7 +44,7 @@ export class StartersController extends Controller {
       return starterComment.starterId == starter.id;
     });
 
-    this.response.render("pages/Bruschetta.ejs", {
+    this.response.render("pages/starters.ejs", {
       starter,
       comments,
     });
