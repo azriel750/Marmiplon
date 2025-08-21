@@ -24,6 +24,7 @@ export class StartersController extends Controller {
     }
 
     this.response.render("pages/starters.ejs", {
+      starters,
       flash,
     });
   }
@@ -44,7 +45,7 @@ export class StartersController extends Controller {
       return starterComment.starterId == starter.id;
     });
 
-    this.response.render("pages/starters.ejs", {
+    this.response.render("pages/Bruschetta.ejs", {
       starter,
       comments,
     });
