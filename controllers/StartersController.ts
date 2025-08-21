@@ -22,12 +22,17 @@ export class StartersController extends Controller {
         message: "Une erreur est survenue lors de la création de l'entrée.",
       };
     }
-
+   
     this.response.render("pages/starters.ejs", {
       starters,
       flash,
     });
   }
+
+
+
+
+
 
   public readStarters() {
     const requestedId = this.request.params.id;
