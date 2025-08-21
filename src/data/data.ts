@@ -50,7 +50,6 @@ export type StarterComment = {
   id: number;
   name: string;
   starterId: number; 
-
 }
 export type Maincourse= {
   id:number;
@@ -70,6 +69,7 @@ export type DessertsComment= {
   name:string;
   DessertsId:number;
 }
+
 export const starters: Starter[] = [
   { id: 101, name: "Bruschetta" },
   { id: 102, name: "Salade Grecque" },
@@ -78,13 +78,10 @@ export const startersComments: StarterComment[] = [
   { id: 1, name: "Alice", starterId: 101 },
   { id: 2, name: "Bob", starterId: 102 },
 ];
-
-
-
-
-
-
-
+export const mainCourse: MainCourse[] = [
+  { id: 1, name: "Patte carbo"},
+  { id: 2, name: "Poulet roti"},
+];
 export const Maincoursecomment: MaincourseComment[] = [
   { id: 4, name: "David", MaincourseId: 201 },
   { id: 5, name: "Eve", MaincourseId: 202 },

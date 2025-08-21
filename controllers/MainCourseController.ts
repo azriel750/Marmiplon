@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { MainCourse  } from '../src/data/data';
+import { mainCourse  } from '../src/data/data';
 import { Controller } from "../libs/Controller";
 
         interface FlashMessage {
@@ -21,7 +21,7 @@ export class MainCourseController extends Controller {
         let flash: FlashMessage | null= null;
 
         this.response.render("pages/maindish.ejs", {
-            MainCourse,
+            mainCourse,
             flash,
         });
     }
@@ -29,4 +29,19 @@ export class MainCourseController extends Controller {
         const requestedId = this.request.params.id
         
     }   
+
+    public editMainCourse(){
+        const requestedId = this.request.params.id
+        
+    }   
+
+    public addMainCourse(){
+        const requestedId = this.request.params.id
+        
+    }
+
+    public deleteMainCourse(){
+        const requestedId = this.request.params.id
+        
+    }
 }

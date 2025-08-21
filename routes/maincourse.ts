@@ -3,22 +3,42 @@ import { Router } from "express";
 import { MainCourseController } from "../controllers/MainCourseController";
 
 
+const MainCourseRouter = Router();
 
-const MaincourseRouter = Router();
-
-
-MaincourseRouter.get("/Maincourse", (req, res) => {
-  const controller = new MainCourseController(req, res);
+// Browse
+MainCourseRouter.get("/MainCourse", (request, response) => {
+  const controller = new MainCourseController(request, response);
   controller.browseMainCourse();
 });
 
-
-MaincourseRouter.get("/Maincourse/:id", (req, res) => {
-  const controller = new MainCourseController(req, res);
-  controller.readMainCourse();  
+// Read
+MainCourseRouter.get("/MainCourse/:id", (request, response) => {
+  const controller = new MainCourseController(request, response);
+  controller.readMainCourse();
 });
 
+// Edit
+MainCourseRouter.put("/MainCourse/:id", (request, response) => {
+  const controller = new MainCourseController(request, response);
+  controller.editMainCourse();
+});
+
+// Add
+MainCourseRouter.post("/MainCourse", (request, response) => {
+  const controller = new MainCourseController(request, response);
+  controller.addMainCourse();
+});
+
+// Delete
+MainCourseRouter.delete("/MainCourse/:id", (request, response) => {
+  const controller = new MainCourseController(request, response);
+  controller.deleteMainCourse();
+});
+
+export default MainCourseRouter;
 
 
 
-export default MaincourseRouter; 
+
+
+

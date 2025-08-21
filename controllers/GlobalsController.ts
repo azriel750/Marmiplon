@@ -11,13 +11,14 @@ export class GlobalsController {
 
   public homepage() {
     this.response.render("pages/home.ejs");
+
   }
 
-  public categories() {
-    this.response.send("Bienvenue sur la page catégorie");
-  }
+  // public categories() {
+  //   this.response.send("Bienvenue sur la page catégorie");
+  // } 
 
-  public recettes() {
-    this.response.send("Bienvenue sur la page recettes");
-  }
+  // public recettes() {
+  //   this.response.send("Bienvenue sur la page recettes");
+  // }
 }
