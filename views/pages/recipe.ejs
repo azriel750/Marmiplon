@@ -1,0 +1,21 @@
+<%- include("../partials/head", {title: "Welcome Bon Plated" }) %>
+
+<div class="container">
+ <h1 class="recipe"><%= recipe.title %></h1>
+
+    <p><%= recipe.description %></p>
+    <p><%= recipe.recipeId %></p>
+    <p><%= recipe.ingredientsWithDetails %></p>
+
+    <% ingredientsWithDetails.forEach((ingredientsWithDetail) => { %> 
+        <div class="card">
+            <a href="/starters/<%= recipe.id %>"><%= ingredientsWithDetail.name %></a>
+            <a href="/starters/<%= recipe.id %>"><%= ingredientsWithDetail.quantity %></a>
+            
+        </div>
+<% }) %>
+      
+    </div>
+</div>
+
+    <%- include ("../partials/footer") %>
