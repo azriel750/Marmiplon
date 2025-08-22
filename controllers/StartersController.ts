@@ -9,23 +9,12 @@ interface FlashMessage {
 export class StartersController extends Controller {
   public browseStarters() {
     const success = this.request.query.success;
-    let flash: FlashMessage | null = null;
-
-    if (success === "true") {
-      flash = {
-        type: "success",
-        message: "L'entrée a bien été créée!",
-      };
-    } else if (success === "false") {
-      flash = {
-        type: "error",
-        message: "Une erreur est survenue lors de la création de l'entrée.",
-      };
-    }
+    
+    const starters = recipes.filter(recipes => recipes.categoryId === 1);
    
     this.response.render("pages/starters.ejs", {
       starters,
-      flash,
+      
     });
   }
 
