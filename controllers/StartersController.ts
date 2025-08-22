@@ -1,10 +1,6 @@
 import { Controller } from "../libs/Controller";
 import { recipes, categories, ingredients, starters, startersComments  } from '../src/data/data';
 
-interface FlashMessage {
-  type: 'success' | 'error';
-  message: string;
-}
 
 export class StartersController extends Controller {
   public browseStarters() {

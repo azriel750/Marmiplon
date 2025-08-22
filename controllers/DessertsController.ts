@@ -1,31 +1,15 @@
 import { Controller } from "../libs/Controller";
 import { Dessert, Desserts,Dessertscomment,DessertsComment } from "../src/data/data";
 
-interface FlashMessage {
-  type: 'success' | 'error';
-  message: string;
-}
 
 export class DessertsController extends Controller {
   public browseDesserts() {
     const success = this.request.query.success;
-    let flash: FlashMessage | null = null;
-
-    if (success === "true") {
-      flash = {
-        type: "success",
-        message: "Le dessert a bien été créé!",
-      };
-    } else if (success === "false") {
-      flash = {
-        type: "error",
-        message: "Une erreur est survenue lors de la création du dessert.",
-      };
-    }
+   
 
     this.response.render("pages/Desserts.ejs", {
       Dessert,
-      flash,
+    
     });
   }
 
