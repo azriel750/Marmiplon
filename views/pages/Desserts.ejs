@@ -2,12 +2,12 @@
     
 <div class="container">
     <h1> Desserts </h1>
-   <% Desserts.forEach((Desserts) => { %> 
+   <% desserts.forEach((dessert) => { %> 
         <div class="card">
              
-            <a href="/Desserts/<%= Desserts.id %>"><%= Desserts.name %></a>
-            <img src="/Entree-image2.png" alt="">
-        </div>
+            <a href="/desserts/<%= dessert.id %>"><%= dessert.title %></a>
+            <img src="/Dessert-image2.png" alt="">
+            </div>
 <% }) %>
     </div>
 </div>

@@ -1,31 +1,26 @@
 import { Request, Response } from "express";
-import { mainCourse  } from '../src/data/data';
+import {  recipes } from '../src/data/data';
 import { Controller } from "../libs/Controller";
 
-        interface FlashMessage {
-        type: 'success' | 'error';
-        message: string;
-}
-
 export class MainCourseController extends Controller {
-    // protected request: Request;
-    // protected response: Response;
+    //protected request: Request;
+     //protected response: Response;
 
     // constructor(request: Request, response: Response){
-    //     this.request = request;
-    //     this.response = response;
-    // }
+      //   this.request = request;
+        // this.response = response;
+     
 
-    public browseMainCourse() {
-        const success = this.request.query.success;
-        let flash: FlashMessage | null= null;
+    public browseMainCourses() {
+    const success = this.request.query.success;
+    const MainCourses = recipes.filter(recipes => recipes.categoryId === 2);
 
-        this.response.render("pages/maindish.ejs", {
-            mainCourse,
-            flash,
-        });
-    }
-    public readMainCourse(){
+    this.response.render("pages/MainCourses.ejs", {
+        MainCourses, 
+    });
+}
+
+    public readMainCourses(){
         const requestedId = this.request.params.id
         
     }   
