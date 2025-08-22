@@ -18,11 +18,6 @@ export class StartersController extends Controller {
     });
   }
 
-
-
-
-
-
   public readStarters() {
     const requestedId = this.request.params.id;
     const starter = starters.find((starter) => {
@@ -34,7 +29,7 @@ export class StartersController extends Controller {
       return;
     }
 
-    const comments = startersComments.filter((starterComment) => {
+    const starterUnit = startersComments.filter((starterComment) => {
       return starterComment.starterId == starter.id;
     });
 
