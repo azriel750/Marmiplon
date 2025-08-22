@@ -1,36 +1,35 @@
 import { Controller } from "../libs/Controller";
-import { Dessert, Desserts,Dessertscomment,DessertsComment } from "../src/data/data";
+import { recipes, categories,} from "../src/data/data";
 
 
 export class DessertsController extends Controller {
   public browseDesserts() {
     const success = this.request.query.success;
-   
+    const desserts = recipes.filter(recipes => recipes.categoryId === 3);
 
     this.response.render("pages/Desserts.ejs", {
-      Dessert,
-    
+      desserts,
     });
   }
 
   public readDesserts() {
     const requestedId = this.request.params.id;
-    const Desserts = Dessert.find((Desserts) => {
-      return Desserts.id == parseInt(requestedId);
+    const dessert = recipes.find((dessert) => {
+      return dessert.id == parseInt(requestedId);
     });
 
-    if (!Desserts) {
+    if (!dessert) {
       this.response.send("La recette demandée n'existe pas");
       return;
     }
 
-    const comments = Dessertscomment.filter((Dessertscomment) => {
-      return Dessertscomment.DessertsId == Desserts.id;
+    const comments = dessertsComments.filter((dessertsComment) => {
+      return dessertsComment.dessertId == dessert.id;
 
     });
 
     this.response.render("pages/Dessert.ejs", {
-      Desserts,
+      dessert,
       comments,
     });
   }
