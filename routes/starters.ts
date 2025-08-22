@@ -4,7 +4,7 @@
 import { Router } from "express";
 
 
-import { StartersController } from "../controllers/startersController";
+import { StartersController } from "../controllers/StartersController";
 import { Controller } from "../libs/Controller";
 
  //Initialiastion du bookRouter Express
