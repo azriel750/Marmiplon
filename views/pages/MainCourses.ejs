@@ -1,0 +1,16 @@
+
+<%- include("../partials/head", {title: "Welcome Bon Plated"}) %>
+<div class="container">
+    <h1>Plat Principaux</h1>
+
+    <div class="cards">
+ <% MainCourses.forEach((MainCourse) => { %> 
+        <div class="card">
+            <a href="/MainCourses/<%= MainCourse.id %>"><%= MainCourse.title %></a>
+            <img src="/PlatsPrincipaux-image1.png" alt="">
+        </div>
+<% }) %>
+
+    </div>
+</div>
+<%- include ("../partials/footer") %>
