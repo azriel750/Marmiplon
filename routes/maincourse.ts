@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 import { Router } from "express";
 import { MainCourseController } from "../controllers/MainCourseController";
@@ -43,5 +44,7 @@ export default MainCourseRouter;
 
 
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
