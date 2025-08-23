@@ -1,16 +1,7 @@
-import { Request, Response } from "express";
-import {  recipes } from '../src/data/data';
+import {recipes, categories, ingredients, recipeIngredients, recipeComments, recipeInstructions,} from '../src/data/data';
 import { Controller } from "../libs/Controller";
 
 export class MainCourseController extends Controller {
-    //protected request: Request;
-     //protected response: Response;
-
-    // constructor(request: Request, response: Response){
-      //   this.request = request;
-        // this.response = response;
-     
-
     public browseMainCourses() {
     const success = this.request.query.success;
     const MainCourses = recipes.filter(recipes => recipes.categoryId === 2);
@@ -22,21 +13,53 @@ export class MainCourseController extends Controller {
 
     public readMainCourses(){
         const requestedId = this.request.params.id
-        
-    }   
-
-    public editMainCourse(){
-        const requestedId = this.request.params.id
-        
-    }   
-
-    public addMainCourse(){
-        const requestedId = this.request.params.id
-        
+    const MainCourses = recipes.find((recipe) => {
+      return recipe.id == parseInt(requestedId) && recipe.categoryId === 2;
+    });
+    if (!MainCourses) {
+      this.response.send(`La recette demandée n'existe pas`);
+      return;
     }
+    const comments = recipeComments.filter((comment) => {
+          return comment.recipeId == MainCourses.id;
+    });
 
-    public deleteMainCourse(){
-        const requestedId = this.request.params.id
-        
-    }
-}
+
+const MainCoursesIngredients = recipeIngredients.filter(ri => ri.recipeId === MainCourses.id);
+    const ingredientsWithDetails = MainCoursesIngredients.map(ri => {
+    const ingredient = ingredients.find(i => i.id === ri.ingredientId);
+    return {
+        id: ri.id,
+        quantity: ri.quantity,
+        unit: ri.unit,
+        ingredientId: ri.ingredientId,
+        recipeId: ri.recipeId,
+        name: ingredient?.name || 'Ingrédient inconnu'
+      };
+    });
+    console.log(MainCoursesIngredients)
+
+const MainCoursesInstructions = recipeInstructions
+  .filter(re => re.recipeId === MainCourses.id)
+  .sort((a, b) => a.step - b.step);
+
+  const MainCoursesComment = recipeComments
+  .filter(rc => rc.recipeId === MainCourses.id)
+  .sort((a, b) => a.id - b.id);
+
+console.log(MainCoursesInstructions);
+
+    // const recipeIngredentAll = recipeIngredients.filter(recipes => recipes.categoryId === 1);
+
+
+    this.response.render("pages/recipe.ejs", {
+      recipe: MainCourses,
+      MainCoursesIngredients,
+      ingredientsWithDetails,
+       MainCoursesInstructions,
+     MainCoursesComment
+    });
+
+
+
+    }}
