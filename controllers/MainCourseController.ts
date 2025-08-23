@@ -39,25 +39,22 @@ const MainCoursesIngredients = recipeIngredients.filter(ri => ri.recipeId === Ma
     });
     console.log(MainCoursesIngredients)
 
-const MainCoursesInstructions = recipeInstructions
+const stepInstructions = recipeInstructions
   .filter(re => re.recipeId === MainCourses.id)
   .sort((a, b) => a.step - b.step);
 
-  const MainCoursesComment = recipeComments
+  const stepComment = recipeComments
   .filter(rc => rc.recipeId === MainCourses.id)
   .sort((a, b) => a.id - b.id);
 
-console.log(MainCoursesInstructions);
-
-    // const recipeIngredentAll = recipeIngredients.filter(recipes => recipes.categoryId === 1);
 
 
     this.response.render("pages/recipe.ejs", {
       recipe: MainCourses,
       MainCoursesIngredients,
       ingredientsWithDetails,
-       MainCoursesInstructions,
-     MainCoursesComment
+      stepInstructions,
+      stepComment
     });
 
 

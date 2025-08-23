@@ -22,16 +22,18 @@
 
 
         <ul>
-        <% starterInstructions.forEach(function(instruction) { %>
+        <% stepInstructions.forEach(function(instruction) { %>
             <li><strong>Étape <%= instruction.step %>:</strong> <%= instruction.description %></li>
         <% }) %>
         </ul>
+
+        
 
 
 
         <h2>Commentaires</h2>
         <ul>
-        <% starterComment.forEach(function(comment) { %>
+        <% stepComment.forEach(function(comment) { %>
             <li>
             <strong>Commentaire #<%= comment.id %></strong><br>
             <%= comment.content %><br>
