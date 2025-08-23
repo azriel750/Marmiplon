@@ -9,12 +9,44 @@
 
     <% ingredientsWithDetails.forEach((ingredientsWithDetail) => { %> 
         <div class="card">
-            <a href="/starters/<%= recipe.id %>"><%= ingredientsWithDetail.name %></a>
-            <a href="/starters/<%= recipe.id %>"><%= ingredientsWithDetail.quantity %></a>
-            
+            <p><%= ingredientsWithDetail.name %></p>
+            <p><%= ingredientsWithDetail.quantity %></p>
         </div>
-<% }) %>
+    <% }) %>
       
+
+
+        
+
+<div class="container">
+
+
+        <ul>
+        <% starterInstructions.forEach(function(instruction) { %>
+            <li><strong>Étape <%= instruction.step %>:</strong> <%= instruction.description %></li>
+        <% }) %>
+        </ul>
+
+
+
+        <h2>Commentaires</h2>
+        <ul>
+        <% starterComment.forEach(function(comment) { %>
+            <li>
+            <strong>Commentaire #<%= comment.id %></strong><br>
+            <%= comment.content %><br>
+            <% if (comment.author) { %>
+                <em>– <%= comment.author %></em>
+            <% } %>
+            </li>
+        <% }) %>
+        </ul>
+        
+   
+</div>
+
+
+
     </div>
 </div>
 

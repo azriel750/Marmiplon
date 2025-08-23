@@ -23,14 +23,10 @@ export class DessertsController extends Controller {
       return;
     }
 
-    const comments = dessertsComments.filter((dessertsComment) => {
-      return dessertsComment.dessertId == dessert.id;
-
-    });
 
     this.response.render("pages/Dessert.ejs", {
       dessert,
-      comments,
+      
     });
   }
 
