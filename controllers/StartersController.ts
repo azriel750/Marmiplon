@@ -49,14 +49,24 @@ export class StartersController extends Controller {
     console.log(starterIngredients)
 
 
+const starterInstructions = recipeInstructions
+  .filter(re => re.recipeId === starter.id)
+  .sort((a, b) => a.step - b.step);
 
+  const starterComment = recipeComments
+  .filter(rc => rc.recipeId === starter.id)
+  .sort((a, b) => a.id - b.id);
+
+console.log(starterInstructions);
     // const recipeIngredentAll = recipeIngredients.filter(recipes => recipes.categoryId === 1);
 
 
     this.response.render("pages/recipe.ejs", {
       recipe: starter,
       starterIngredients,
-      ingredientsWithDetails
+      ingredientsWithDetails,
+      starterInstructions,
+      starterComment
       
     });
   }
