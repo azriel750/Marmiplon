@@ -11,7 +11,7 @@ MainCoursesRouter.get("/MainCourses", (req, res) => {
 
 MainCoursesRouter.get("/MainCourses/:id", (req, res) => {
   const controller = new MainCourseController(req, res);
-  controller.readMainCourses();  
+  controller.readMainCourses();
 });
 
 
