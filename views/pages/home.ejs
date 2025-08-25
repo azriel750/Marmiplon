@@ -4,13 +4,17 @@
 
     <section class="homepageCentral">
         <div class="allCat">
-            <h1 id="pageName">Category</h1>
+            <div class="banner-content">
+            <img src="banner-image.png" alt="hompagebanner" class="image"/>
+            </div>
+            <h1 id="pageName">Categories</h1>
+            <div class="allcat">
             <div class="cat">
                 <a href="/starters">
 
                     <h2 class="catName">Entrées</h2>
-                    <p>Des entrees delicieuses pour commencer le repas!</p>
-                    <img src="/image_10.png" alt="Entrées">
+                    <p class="descript">Des entrees delicieuses pour commencer le repas!</p>
+                    <img src="/image_10.png" alt="Entrées" class="catImg">
                 </a>
             </div>
 
@@ -18,7 +22,7 @@
                 <a href="/MainCourses">
 
                     <h2>Plat principal</h2>
-                    <p>Des plats principaux savoureux pour le cœur du repas.</p>
+                    <p class="descript">Des plats principaux savoureux pour le cœur du repas.</p>
                     <img src="/image2.png" alt="Plat" class="catImg">
                 </a>
             </div>
@@ -26,26 +30,42 @@
             <div class="cat">
                 <a href="/Desserts">
                     <h2>Dessert</h2>
-                    <p>Des desserts sucrés pour terminer le repas sur une note agréable.</p>
-                    <img src="/image3.png" alt="Dessert">
-                    
+                    <p class="descript">Des desserts sucrés pour terminer le repas sur une note agréable.</p>
+                    <img src="/image3.png" alt="Dessert" class="catImg">    
                 </a>
             </div>
 
-            <div class="cardMonth">
-               
-                    <h2>Recipe Card for the Month</h2>
-                    <div>
-                        <p>Ingredients</p>
-                        <p>1 Avocados, 200gm cherry tomatoes, few leaves of coriander, 1 small onion, herbe de provence, salt, lime</p>
-                        <img src="/mask group.png" alt="Dessert">
-                    
-                    </div>
-                    
-                    
-               
             </div>
-    </section> 
+
+            <div class="cat">
+            <h2>Recipe Card For The Month</h2>
+            </div>    
+  <main>
+    <div class="recipeOfTheMonth">
+      <div class="AvoSalad">
+        <img src="Mask group.png" alt="image-avocado-salad" class="img"></img>
+      </div>
+      <div class="RecipeCard">
+        <div class="info1"> 
+          <h3>Avocado Tomato Salad</h3>     
+        </div>
+        <div class="info2">
+          <h4>Ingredients</h4>
+          <p class="text">1 Avocados, 200gm cherry tomatoes, few leaves of coriander, 1 small onion, herbe de provence, salt, lime</p>
+        </div>
+        <div class="info3">
+          <h4>Recipe</h4>
+          <ol class="text">
+            <li>Cut the avocados and tomatoes.</li>
+            <li>Add seasonings, salt to taste and a squeeze of lime.</li>
+            <li>Enjoy with a glass of fresh lemonade!</li>
+          </ol>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</section> 
 
 
  <%- include ("../partials/footer") %>

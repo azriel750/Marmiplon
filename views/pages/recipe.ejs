@@ -2,36 +2,32 @@
 
 <div class="container">
  <h1 class="recipe"><%= recipe.title %></h1>
+ <p><%= recipe.description %></p>
 
-    <p><%= recipe.description %></p>
-    <p><%= recipe.recipeId %></p>
-    <p><%= recipe.ingredientsWithDetails %></p>
+<h3>Ingredients</h3>
+<p><%= recipe.recipeId %></p>
+<p><%= recipe.ingredientsWithDetails %></p>
 
-    <% ingredientsWithDetails.forEach((ingredientsWithDetail) => { %> 
-        <div class="card">
-            <p><%= ingredientsWithDetail.name %></p>
-            <p><%= ingredientsWithDetail.quantity %></p>
-        </div>
+<% ingredientsWithDetails.forEach((ingredientsWithDetail) => { %>
+         
+<div class="ingredients">
+<p><%= ingredientsWithDetail.name %></p>
+<p><%= ingredientsWithDetail.quantity %></p>
+</div>
     <% }) %>
       
 
-
-        
-
+<h3>Steps</h3>    
 <div class="container">
 
-
-        <ul>
-        <% stepInstructions.forEach(function(instruction) { %>
-            <li><strong>Étape <%= instruction.step %>:</strong> <%= instruction.description %></li>
+<ul>
+<% stepInstructions.forEach(function(instruction) { %>
+<li><strong>Étape <%= instruction.step %>:</strong> <br> <%= instruction.description %></li>
         <% }) %>
         </ul>
 
         
-
-
-
-        <h2>Commentaires</h2>
+        <h3>Commentaires</h3>
         <ul>
         <% stepComment.forEach(function(comment) { %>
             <li>

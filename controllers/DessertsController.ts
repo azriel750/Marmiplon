@@ -1,5 +1,5 @@
+import {recipes, categories, ingredients, recipeIngredients, recipeComments, recipeInstructions,} from '../src/data/data';
 import { Controller } from "../libs/Controller";
-import { recipes, categories,} from "../src/data/data";
 
 
 export class DessertsController extends Controller {
@@ -14,18 +14,48 @@ export class DessertsController extends Controller {
 
   public readDesserts() {
     const requestedId = this.request.params.id;
-    const dessert = recipes.find((dessert) => {
-      return dessert.id == parseInt(requestedId);
+    const desserts = recipes.find((recipe) => {
+      return recipe.id == parseInt(requestedId) && recipe.categoryId === 3  ;
     });
 
-    if (!dessert) {
+    if (!desserts) {
       this.response.send("La recette demandée n'existe pas");
       return;
     }
 
+    const comments = recipeComments.filter((comment) => {
+          return comment.recipeId == desserts.id;
+    });
 
-    this.response.render("pages/Dessert.ejs", {
-      dessert,
+    const dessertsIngredients = recipeIngredients.filter(ri => ri.recipeId === desserts.id);
+    const ingredientsWithDetails = dessertsIngredients.map(ri => {
+    const ingredient = ingredients.find(i => i.id === ri.ingredientId);
+    return {
+        id: ri.id,
+        quantity: ri.quantity,
+        unit: ri.unit,
+        ingredientId: ri.ingredientId,
+        recipeId: ri.recipeId,
+        name: ingredient?.name || 'Ingrédient inconnu'
+      };
+    });
+    console.log(dessertsIngredients)
+
+const stepInstructions = recipeInstructions
+  .filter(re => re.recipeId === desserts.id)
+  .sort((a, b) => a.step - b.step);
+
+  const stepComment = recipeComments
+  .filter(rc => rc.recipeId === desserts.id)
+  .sort((a, b) => a.id - b.id);
+
+
+    this.response.render("pages/recipe.ejs", {
+      recipe: desserts,
+      dessertsIngredients,
+      ingredientsWithDetails,
+      stepInstructions,
+      stepComment
       
     });
   }
@@ -44,5 +74,9 @@ export class DessertsController extends Controller {
 
   public deleteDesserts() {
     this.response.send("Bienvenue sur la suppression d'une recette");
+  }
+
+  public desserts() {
+  this.response.render("pages/home.ejs");
   }
 }
