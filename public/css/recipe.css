@@ -51,6 +51,16 @@ h1 {
   display: block;
 }
 
+.ingredients{
+  display: inline-block;
+  flex-direction: column;
+  background-color: #ffc1a76d;
+  padding: 5px;
+  border-radius: 5px;
+  color: black;
+  font-family: 'Playfair Display';
+}
+
 /* Content Sections */
 .section {
   width: 100%;

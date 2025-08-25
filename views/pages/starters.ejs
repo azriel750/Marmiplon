@@ -1,11 +1,17 @@
 <%- include("../partials/head", {title: "Welcome Bon Plated" }) %>
 
 <div class="container">
+    <div class="banner-content">
+    <img src="image_10.png" alt="maincourse-image" class="image"/>
+    </div>
+
     <h1>Entree</h1>
+
+    <div class="cards">
 <% starters.forEach((starter) => { %> 
         <div class="card">
             <a href="/starters/<%= starter.id %>"><%= starter.title %></a>
-            <img src="../Entree-image2.png" alt="">
+            <!-- <img src="../Entree-image2.png" alt=""> -->
         </div>
 <% }) %>
         
